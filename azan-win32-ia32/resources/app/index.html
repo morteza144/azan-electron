@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<meta content="utf-8" http-equiv="encoding">
+    <link rel="stylesheet" href="./css/bootstrap4_5_0.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-rtl.min.css">
+    <link rel="stylesheet" href="./css/myfont.css">
+    <link rel="stylesheet" href="./main.css">
+
+    <!-- <link rel="stylesheet" href="cdn.rawgit.com/morteza/bootstrap-rtl/v3.3.4/dist/css/bootstrap-rtl.min.css"> -->
+	<title>azan</title>
+
+</head>
+
+
+
+ 
+
+<body class="iran_bold mori-gradient3">
+
+
+<!-- #####################  first nav fixed --> 
+
+
+
+<!-- #####################  second nav --> 
+		<ul class="nav shadow navbar mori-gra6">
+
+			<li class="nav-item">
+				<a class="nav-link disabled" href="#">وبسایت رسمی</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link disabled" href="#">سایر محصولات</a>
+			</li>
+
+			<li class="nav-item">
+				<a class="nav-link disabled" href="#">تماس با ما</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="./about_us.html">درباره ما</a>
+			</li>
+
+			<div class="col-sm-3">
+			<img src="p-trans.png" class=" float-md-left" width="200px" height="80px" alt=""><br>
+			</div>
+		</ul>
+
+
+		<br>
+
+
+<!-- <script type="text/javascript">
+ var now = new Date();
+var custom_date = new Date(now.getFullYear(), now.getMonth(), now.getDate(), bb[0], bb[1], bb[2], 0) - now;
+// setTimeout(function(){alert(custom_date}, md);
+alert(custom_date);
+</script> -->
+
+
+
+<div class="row">
+
+   <div class="col-md-8 offset-md-2 col-sm-12">
+				<div class="cont ">
+					<div class="card1">
+
+						<div class="front mori-gradient3 text-center" id="front" style="background-image: transparent;"> <!-- id add just for use in setting change theme=>function thoo() -->
+														
+<!-- #####################  city selectors --> 
+<br>
+						<div class="ir-select card-body">
+								<label for="poro">ابتدا از این قسمت استان خود را انتخاب کنید:</label>&nbsp;&nbsp;
+								<select class="ir-province" id="poro"></select>
+							<hr>
+								<label for="sele">در این قسمت هم شهر مورد نظر را انتخاب کنید</label>&nbsp;
+								<select class="ir-city" id="sele"></select>	
+						</div> <!-- end ir-select -->
+				<hr>
+		<p id="date2"></p>	
+<br>
+	<button type="button" onclick="theme_change()" class="btn btn-primary btn-lg"> تم</button>&nbsp;
+				<button type="button" class="btn-success btn-lg" onclick="go()" id="go">دریافت اوقات شرعی</button>&nbsp;
+				<button class="btn btn-primary btn-lg" onclick="flip()">flip</button>
+
+		</div> <!-- end class front -->
+						
+	<div class="back mori-gradient3 p-5  m-auto" id="back"><!-- id add just for use in setting change theme=>function thoo() -->
+
+				<!-- #####################  ul => result container  --> 
+		<div class="row text-center">
+			
+				<div class=" col-sm-6">
+					
+					<p id="date1">برای دریافت اطلاعات باید اتصال اینترنت برقرار باشد</p>
+
+					<p id="azan_sobh"></p>
+					<p id="azan_zohr"></p>
+					<p id="azan_maghreb"></p>
+
+					<hr>
+				</div>
+				<div class="col-sm-6">
+					<img src="azan-3d-min.png" class="img-fluid" alt="...">
+					<br>
+					<p id="tolu_aftab"></p>
+					<p id="ghorub_aftab"></p>
+					<p id="nimeshab"></p>
+				</div>
+					</div>
+				<div class="row">
+					<div class="col-12">	
+					<p id="message"></p>
+					<button class="btn-danger btn-lg" onclick="flip()">تعویض شهر</button>
+						
+					</div>
+					</div>	
+				</div> 			<!-- end class back -->
+		</div>
+		
+				
+	</div>					<!-- end card -->
+</div> 				<!-- end class cont  -->
+		
+
+
+</div>			<!-- end col -->
+
+</div>		<!-- end row -->
+<br>
+
+<div class="text-center shadow p-2">
+
+<button type="button" class="btn btn-sm btn-secondary  text-center" onclick="entezar()">انتظار(کاظم زاده)</button>
+<button type="button" class="btn btn-sm btn-secondary text-center" onclick="manshavi()">منشاوری</button>
+<button type="button" class="btn btn-sm btn-secondary text-center" onclick="salim()">سلیم موذن زاده</button>
+<button type="button" class="btn btn-sm btn-secondary text-center" onclick="abdalbast()">عبد الباسط</button>
+<button type="button" class="btn btn-sm btn-secondary text-center" onclick="ghalvash()">غلوش</button>
+<button type="button" class="btn btn-sm btn-secondary text-center" onclick="sharif()">شریف</button>
+<button type="button" class="btn btn-sm btn-secondary text-center" onclick="aboorihe()">ابوریه</button>
+<button type="button" class="btn btn-sm btn-secondary text-center" onclick="rezaeean()">رضائیان</button>
+<button type="button" class="btn btn-sm btn-secondary text-center" onclick="saeedhafez()">سعید حافظ</button>
+<button type="button" class="btn btn-sm btn-primary bg-lg" onclick="togglePlay()" id="toggle_play">پخش</button>
+
+</div>
+
+  <audio src="azan_mp3/Entezar.mp3" preload="auto" id="audio">audio file mori</audio>
+	</div> <!-- container div -->
+<!-- Insert this line above script imports  -->
+<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+	<script src="./js/jquery.min.js"></script><!-- jquery -->
+    <script src="./js/bootstrap.bundle.min.js"></script> <!-- bootstrap bundle -->
+
+	<script src="./js/ir-city-select.min.js"></script>  <!-- ir-city -->
+	<script type="text/javascript" src="./main.js"></script>	<!-- hi.js -->
+</body>
+</html>

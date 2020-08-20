@@ -1,0 +1,21 @@
+{
+  "name": "azan",
+  "productName": "azan",
+  "version": "1.0.0",
+  "description": "first app by morteza shabani pour",
+  "main": "ele.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mortezagit/azan-ele.git"
+  },
+  "author": "morteza shabani pour",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^9.2.0",
+    "electron-builder": "^22.8.0",
+    "electron-packager": "^15.0.0"
+  }
+}
